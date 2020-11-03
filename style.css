@@ -1,0 +1,148 @@
+/* Cirque */
+
+/* ----------------------------------------------------------- */
+/* Variables */
+
+:root {
+  /* White circles */
+  --circle-color: hsl(0, 0%, 100%);
+
+  /* Background */
+  --background-color: hsl(0, 0%, 5%);
+
+  /* Buttons */
+  --button-color: hsl(0, 0%, 0%);
+  --button-border-color: hsl(0, 0%, 20%);
+  --button-hover-color: hsl(0, 0%, 20%);
+  --button-padding: 0.7rem 1.2rem 0.9rem;
+}
+
+
+/* ----------------------------------------------------------- */
+/* General */
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ----------------------------------------------------------- */
+/* Main canvas */
+
+main {
+  background: var(--background-color);
+  display: grid;
+  flex: 1;
+  height: 100%;
+  place-items: center;
+}
+
+#wrapper {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+}
+
+
+/* ----------------------------------------------------------- */
+/* Sidebar */
+
+aside {
+  background: hsl(0, 0%, 10%);
+  border-radius: 5pt 0 0 5pt;
+  box-shadow: 0 0 0.9rem 0.2rem rgba(0, 0, 0, 90%);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: fixed;
+  right: 0;
+  top: 5rem;
+  transform: translate3d(25rem, 0, 0);
+  transition: transform .15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+  width: 15rem;
+}
+
+aside.active {
+  transform: translate3d(0, 0, 0);
+}
+
+textarea#settings {
+  background: hsl(0, 0%, 5%);
+  border: solid 1pt hsl(0, 0%, 15%);
+  border-radius: 4pt;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.1rem;
+  line-height: 1.35;
+  padding: 0.5rem 0.7rem 0.7rem;
+  resize: none;
+  min-height: 26rem;
+}
+
+aside .button {
+  margin-top: 1rem;
+}
+
+
+/* ----------------------------------------------------------- */
+/* Buttons */
+
+.button {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--button-color);
+  border: solid 1pt var(--button-border-color);
+  border-radius: 5pt;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1.0;
+  padding: var(--button-padding);
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  z-index: 1000;
+}
+
+.button:hover {
+  background: var(--button-hover-color);
+}
+
+
+/* ----------------------------------------------------------- */
+/* Settings button */
+
+.button.settings {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+
+/* ----------------------------------------------------------- */
+/* Larger screens */
+
+@media screen and (min-width: 50em) {
+  /* On larger screens, always show the sidebar */
+  aside {
+    border-radius: 0;
+    box-shadow: none;
+    position: inherit;
+    transform: inherit;
+  }
+
+  .button.settings {
+    display: none;
+  }
+}
