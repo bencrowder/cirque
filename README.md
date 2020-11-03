@@ -5,9 +5,10 @@ A small tool for making art via circle packing. Made in JavaScript.
 
 ## Usage
 
-1. Update the settings.
-2. Click `Generate`.
-3. If you want to download the SVG, click `Download SVG`.
+1. Either [run it via GitHub Pages](https://bencrowder.github.io/cirque/) or download and run it somewhere else (locally, your own server, etc.).
+2. Choose the settings you want.
+3. Click `Generate`.
+4. If you want to download the SVG, click `Download SVG`.
 
 
 ## Settings
